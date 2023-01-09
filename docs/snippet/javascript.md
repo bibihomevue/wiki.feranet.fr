@@ -82,3 +82,21 @@ function capitalise(str: string) {
 }
 ```
 :::
+
+## Create a array from another one 
+```js
+const myArray = [
+  { a: true, b: "000", c: "111" },
+  { a: true, b: "001", c: "110" },
+  { a: false, b: "011", c: "100" },
+]
+
+return myNewArray = myArray.filter(x => x.a).map(x => x.c)
+// output: [111, 110]
+
+return myNewArray = myArray.map(x => x.c)
+// output: [111 , 110, 100]
+
+return myNewArray = myArray.map(x => ({ d: x.a }))
+// output: [{ d: true }, {d: true}, { d: false }] 
+```
