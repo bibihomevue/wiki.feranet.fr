@@ -1,24 +1,23 @@
-# Redémarrage Meraki
-
-## URL API
+# Meraki auto reboot
 
 https://developer.cisco.com/meraki/api-v1/#!reboot-device
 
-# Activer la clé API et récupérer le numéro de série
+Activate the API key and retrieve the serial number
 
 **Sérial number** : Organization > License Info > Devices
 
 **API KEY** : Organization > Settings > Dashboard API access
 
-## Script Bash
+Crontab
+
+```bash
+0 7 * * * /usr/bin/bash /root/schedule_reboot_meraki.sh
+```
+
+Script
 
 ```bash
 #!/bin/bash
-
-# Planifier le redémarrage d'un dispositif Meraki
-# crontab -e
-# 0 7 * * * /usr/bin/bash /root/schedule_reboot_meraki.sh
-
 SERIAL=""
 APIKEY=""
 

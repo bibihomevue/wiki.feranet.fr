@@ -1,74 +1,74 @@
 # Conditions
 
-## Structure : if
+## if
 
 ```bash
 if [ test_1 ] ; then
-  echo "premier test vérifié"
+  echo "test 1"
 elif [ test_2 ]
-  echo "deuxième test vérifié"
+  echo "test 2"
 else
-  echo "test non vérifié"
+  echo "test 3"
 fi
 ```
 
-## Structure : case
+## test
+
+```bash
+test test_1
+  echo "test 1"
+```
+
+## case
 
 ```bash
 case VARIABLE in
-  "mot1")
-    echo "mot 1"
+  "a")
+    echo "1"
     ;;
-  "mot2")
-    echo "mot 2"
+  "b")
+    echo "2"
     ;;
-  "mot3")
-    echo "mot 3"
+  "c")
+    echo "3"
     ;;
   *)
-    echo "Aucun mot"
+    echo "0"
     ;;
 esac
 ```
 
-## Test : symboles
+## • Character strings
 
-```bash
-&& # ET
-|| # OU
-!  # INVERSER
-```
+| code                   | description |
+| ---------------------- | ----------- |
+| `$string1 = $string2`  | Identical   |
+| `$string1 != $string2` | Different   |
+| `-z $string`           | Empty       |
+| `-n $string`           | Not empty   |
 
-## Test : Chaînes de caractères
 
-| code                   | description                                  |
-| ---------------------- | -------------------------------------------- |
-| `$chaîne1 = $chaîne2`  | Vérifie si les deux chaînes sont identiques  |
-| `$chaîne1 != $chaîne2` | Vérifie si les deux chaînes sont différentes |
-| `-z $chaîne`           | Vérifie si la chaîne est vide                |
-| `-n $chaîne`           | Vérifie si la chaîne n'est pas vide          |
+## • Numbers
 
-## Test: Chiffres
+| code              | description      |
+| ----------------- | ---------------- |
+| `$num1 -eq $num2` | Equal            |
+| `$num1 -ne $num2` | No equal         |
+| `$num1 -lt $num2` | Lower than       |
+| `$num1 -le $num2` | Lower or equal   |
+| `$num1 -gt $num2` | Greater than     |
+| `$num1 -ge $num2` | Greater or equal |
 
-| code              | description                                               |
-| ----------------- | --------------------------------------------------------- |
-| `$num1 -eq $num2` | Vérifiez si les nombres sont égaux (EQual)                |
-| `$num1 -ne $num2` | Vérifiez si les nombres sont différents (No Equal)        |
-| `$num1 -lt $num2` | Vérifie si num1 est inférieur ( < ) à num2 (Lower Than)   |
-| `$num1 -le $num2` | Vérifie si num1 est inférieur ou égal ( <= ) à num2       |
-| `$num1 -gt $num2` | Vérifie si num1 est supérieur ( > ) à num2 (Greater Than) |
-| `$num1 -ge $num2` | Vérifie si num1 est supérieur ou égal (>=) à num2         |
+## • Files
 
-## Test : Fichiers
-
-| code                      | description                                                         |
-| ------------------------- | ------------------------------------------------------------------- |
-| `-e $nom_fichier`         | Vérifie si le fichier existe                                        |
-| `-d $nom_fichier`         | Vérifie si le fichier est un répertoire                             |
-| `-f $nom_fichier`         | Vérifie si le fichier est un fichier                                |
-| `-L $nom_fichier`         | Vérifie si le fichier est un lien symbolique                        |
-| `-r $nom_fichier`         | Vérifie si le fichier est lisible                                   |
-| `-w $nom_fichier`         | Vérifie si le fichier est modifiable                                |
-| `-x $nom_fichier`         | Vérifie si le fichier est exécutable                                |
-| `$fichier1 -nt $fichier2` | Vérifie si le fichier1 est plus récent que le fichier2 (Newer Than) |
-| `$fichier1 -ou $fichier2` | Vérifie si le fichier1 est plus ancien que le fichier2 (Older Than) |
+| code                | description |
+| ------------------- | ----------- |
+| `-e $my_file`       | exists      |
+| `-d $my_file`       | folder      |
+| `-f $my_file`       | File        |
+| `-L $my_file`       | Symlink     |
+| `-r $my_file`       | Readable    |
+| `-w $my_file`       | Editable    |
+| `-x $my_file`       | Executable  |
+| `$file1 -nt $file2` | Newer than  |
+| `$file1 -ou $file2` | Older than  |

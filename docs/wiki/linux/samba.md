@@ -1,19 +1,26 @@
-# Partage SAMBA
+# Share SAMBA
 
+Update and installation
 ```bash
-# Mise à jour et installation
-> apt update
-> apt install smbclient cifs-utils
+apt update && apt install smbclient cifs-utils -y
+```
 
-# Création du répertoire
-> mkdir /home/share
+Directory creation
+```bash
+mkdir /home/share
+```
 
-# Ajout des informations d'authentification
-> nano /etc/samba/user
-username=Utilisateur
-password=MotDePasse
+Add authentication information
 
-# Monter le répertoire automatiquement au démarrage
-> nano /etc/fstab
+`/etc/samba/user`
+```bash
+username=<user>
+password=<password>
+```
+
+Mount the directory automatically on boot
+
+`/etc/fstab`
+```bash
 //SRV-WINDOWS/prod/share /home/share cifs  credentials=/etc/samba/user,noexec  0 0
 ```
