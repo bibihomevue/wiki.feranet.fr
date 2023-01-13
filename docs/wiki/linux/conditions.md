@@ -63,8 +63,8 @@ esac
 
 | code                | description |
 | ------------------- | ----------- |
-| `-e $my_file`       | exists      |
-| `-d $my_file`       | folder      |
+| `-e $my_file`       | Exists      |
+| `-d $my_file`       | Folder      |
 | `-f $my_file`       | File        |
 | `-L $my_file`       | Symlink     |
 | `-r $my_file`       | Readable    |

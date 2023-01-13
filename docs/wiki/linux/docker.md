@@ -2,132 +2,87 @@
 
 ## Installation
 
-[Documentation officiel](https://docs.docker.com/engine/install/)
+[Official documentation](https://docs.docker.com/engine/install/)
 
-## Télécharger et éxécuter une image
 
-```bash
-# Télécharger une image ou la mettre à jour
-docker pull debian
-
-# Executer et démarrer une image
-docker run debian
-```
-
-## Commande d'éxecution plus complète
 
 ```bash
-# Donner un nom au conteneur
---name my_debian
-# Supprimer le container apres chaque utilisation
---rm
-# Détacher le container
--d
-# Nat le port 8080 de l'hote sur le 80 du conteneur
--p 8080:80
-# Afficher le retour du conteneur et permet une interface avec lui
--ti
-# Affecter une varible d'environement
--e NAME=debian_variable
-# Monter le dossier /var/www/html de l'hôte vers le dossier /var/lib/debian du conteneur avec les bon droits :
--v /var/www/html:/var/lib/debian:ro
-# Éxecuter la commande bash
-bash
-# Nom de l'hôte :
--h toto
+# Download an image or update it
+docker pull image_name
 
-# Exemple
-docker run -d --name my_debian --rm -p 8080:80 -ti -e NAME=debian_variable -v /var/www/html:/var/lib/debian:ro -h toto debian bash
-```
+# Run an image in the background, specifying a name for the container and exposing a port
+docker run -d -ti --name container_name -p host_port:container_port image_name
 
-## Modification sur les containers
+# Run an image in the background, specifying a name for the container, exposing a port, and mounting a volume
+docker run -d -ti --name container_name -p host_port:container_port -v host_folder:container_folder image_name
 
-```bash
-# Se connecter à un conteneur
-docker exec -ti my_debian bash
+# Show running containers
+docker ps
 
-# Lier le conteneur phpServeur avec apache2 et lancé un terminal
-docker run -it --link phpServeur:phpServeur httpd bash
-```
+# Show running images
+docker images
 
-## Démarrer / Arrêter
+# Show real-time statistics for all running containers
+docker stats --all
 
-```bash
-# Démarrer un conteneur
-docker start my_debian
+# Stop a running container
+docker stop container_name
 
-# Arrêter un conteneur
-docker stop my_debian
-```
-
-## Information
-
-```bash
-# Afficher les processus
-docker ps -a
-
-# Afficher les images
-docker images -a
-
-# Stats docker en temps réél
-docker stats
-```
-
-## Suppression
-
-```bash
-# Supprimer tous les conteneurs
-docker rm $(docker ps -a -q)
-
-# Supprimer toutes les images
-docker rmi -f $(docker images -a -q)
-
-# Supprimer les images, les conteneurs arrêtées, les réseaux inutilisées et construit le cache
-docker system prune
-```
-
-## Construire / Exporter / Importer
-
-```bash
-# Construire une image depuis Dockerfile
+# Build an image from a Dockerfile
 docker build -t my_debian .
 
-# Envoyer une image sur le DockerHub
+# Push an image to DockerHub
 docker push user/my_debian:latest
 
-# Exporter une image en .tar
-docker save -o ./my_debian.tar my_debian
+# Export an image as .tar
+docker save -o my_debian.tar my_debian
 
-# Importer une image en .tar
-docker load -i my_debian
+# Import an image from .tar
+docker load -i my_debian.tar
 ```
 
-## docker-compose.yml
+## remove
 
 ```bash
-# Voir le status
-docker-compose ps
+# Remove a container
+docker rm container_name
 
-# Valider la syntaxe
-docker-compose config
+# Remove an image
+docker rmi image_name
 
-# Affichier les logs
-docker-compose logs -f --tail 5
-```
+# Remove all containers
+docker rm $(docker ps -a -q)
 
-## Mettre à jour docker-compose.yml
+# Remove all images
+docker rmi -f $(docker images -a -q)
 
-```bash
-docker-compose pull
+# Remove all unused images, containers, networks and build cache
+docker system prune
 
-# Relancer les containers
-docker-compose up -d --remove-orphans
-
-# Supprimez les images obsolètes
+# Remove unused images
 docker image prune
 ```
 
-## Exemple de configuration docker-compose.yml
+## docker-compose
+
+```bash
+# See the status of containers defined in a docker-compose file
+docker-compose ps
+
+# Validate the syntax of a docker-compose file
+docker-compose config
+
+# Display the logs for all services
+docker-compose logs -f --tail 5
+
+# Pull the latest version of all images defined in a docker-compose file
+docker-compose pull
+
+# Restart all containers defined in a docker-compose file
+docker-compose up -d --remove-orphans
+```
+
+## docker-compose.yml
 
 ```docker
 version: '3'
