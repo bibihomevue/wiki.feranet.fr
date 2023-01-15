@@ -1,60 +1,60 @@
 # Vim
 
-## Se déplacer dans le texte
+## Moving around in the text
 
-| code | description                              |
-| ---- | ---------------------------------------- |
-| `0`  | Se déplacer en début de ligne            |
-| `$`  | Se déplacer en fin de ligne              |
-| `w`  | Se déplacer de mot en mot vers la droite |
-| `b`  | Se déplacer de mot en mot vers la gauche |
-| `G`  | Se déplacer à la fin du fichier          |
-| `gg` | Se déplacer au début du fichier          |
+| code | description                    |
+| ---- | ------------------------------ |
+| `0`  | Move to the beginning of line  |
+| `$`  | Move to the end of line        |
+| `w`  | Move word by word to the right |
+| `b`  | Move word by word to the left  |
+| `G`  | Move to the end of file        |
+| `gg` | Move to the beginning of file  |
 
-## Effacer du texte
+## Delete text
 
-| code  | description                                   |
-| ----- | --------------------------------------------- |
-| `dw`  | Effacer un mot                                |
-| `d2w` | Effacer 2 mots                                |
-| `d4`  | Effacer 4 caractères                          |
-| `dd`  | Effacer une ligne                             |
-| `6dd` | Effacer 6 lignes                              |
-| `d0`  | Effacer du curseur jusqu'au début de la ligne |
-| `d$`  | Effacer du curseur jusqu'à la fin de la ligne |
+| code  | description                                     |
+| ----- | ----------------------------------------------- |
+| `dw`  | Delete a word                                   |
+| `d2w` | Delete 2 words                                  |
+| `d4`  | Delete 4 characters                             |
+| `dd`  | Delete a line                                   |
+| `6dd` | Delete 6 lines                                  |
+| `d0`  | Delete from cursor to the beginning of the line |
+| `d$`  | Delete from cursor to the end of the line       |
 
-## Copier et coller du texte
+## Copy and paste text
 
-| code  | description                       |
-| ----- | --------------------------------- |
-| `yw`  | Copier un mot                     |
-| `y2w` | Copier 2 mots                     |
-| `yy`  | Copier la ligne                   |
-| `y4`  | Copier 4 lignes                   |
-| `p`   | Coller une ligne ou un mot        |
-| `6p`  | Coller 6 fois une ligne ou un mot |
+| code  | description                  |
+| ----- | ---------------------------- |
+| `yw`  | Copy a word                  |
+| `y2w` | Copy 2 words                 |
+| `yy`  | Copy the line                |
+| `y4`  | Copy 4 lines                 |
+| `p`   | Paste a line or word         |
+| `6p`  | Paste 6 times a line or word |
 
-## Annuler des modifications
+## Undoing changes
 
-| code         | description                                |
-| ------------ | ------------------------------------------ |
-| `u`          | Annuler les actions précédentes            |
-| `U`          | Annuler tous les changements sur une ligne |
-| `CTRL` + `R` | Annuler l'annulation                       |
+| code         | description                |
+| ------------ | -------------------------- |
+| `u`          | Undo previous actions      |
+| `U`          | Undo all changes on a line |
+| `CTRL` + `R` | Redo the undo              |
 
-## Enregistrer, quitter, rechercher, etc.
+## Save, exit, search, etc.
 
-| code             | description                               |
-| ---------------- | ----------------------------------------- |
-| `/`              | Rechercher un mot                         |
-| `:w`             | Enregistrer                               |
-| `:q`             | Quitter ou `:q!` Pour forcer la fermeture |
-| `:wq`            | Enregistrer puis quitter                  |
-| `vim -x fichier` | Créer un fichier avec un mot de passe     |
-| `:X`             | Changer le mot de passe                   |
+| code             | description                   |
+| ---------------- | ----------------------------- |
+| `/`              | Search for a word             |
+| `:w`             | Save                          |
+| `:q`             | Quit or :q! to force close    |
+| `:wq`            | Save and quit                 |
+| `vim -x fichier` | Create a file with a password |
+| `:X`             | Change the password           |
 
-> Pour la recherche d'un mot, faire `ENTRER`` pour valider
+> To search for a word, press `ENTER` to validate
 >
-> `n` pour rechercher en avant
+> `n` to search forward
 >
-> `SHIFT` + `n` pour rechercher en arrière
+> `SHIFT` + `n` to search backwards

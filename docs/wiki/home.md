@@ -1,5 +1,8 @@
-# Feranet.fr
+<script setup>
+const img = 'DALL·E - 3D rendering of a cute baby penguin coding, digital art'
+</script>
 
-::: warning
-Feranet.fr is currently in `beta` status.
-:::
+<figure>
+  <img src="/home.png" :alt="img" :title="img">
+  <figcaption>{{img}}</figcaption>
+</figure>

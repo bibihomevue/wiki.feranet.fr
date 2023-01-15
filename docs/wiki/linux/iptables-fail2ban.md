@@ -11,44 +11,44 @@ sudo dnf install iptables ipset fail2ban
 ```
 :::
 
-## Configuration Iptables
+## Iptables configuration
 
-Copiez la liste des règles iptables dans le fichier `/root/firewall.sh` et modifiez-les puis rendez-la exécutable
+Copy the list of iptables rules to the file `/root/firewall.sh` and modify them and make it executable
 
 ```bash
 curl -L https://git.io/JeSL5 > /root/firewall.sh
 chmod +x /root/firewall.sh
 ```
 
-Tester et vérifier l'exécution du script
+Test and verify the execution of the script
 
 ```bash
 bash /root/firewall.sh
 iptables -L
 ```
 
-Rendre les règles non volatiles
+Make the rules non-volatile
 
 ```bash
 iptables-save > /etc/firewall.conf
 ```
 
-Ouvrez `/etc/network/if-up.d/iptables` et ajoutez ce qui suit
+Open `/etc/network/if-up.d/iptables` and add the following
 
 ```bash
 #!/bin/bash
 iptables-restore < /etc/firewall.conf
 ```
 
-Rendre exécutable
+Make it executable
 
 ```bash
 chmod +x /etc/network/if-up.d/iptables
 ```
 
-### Administration
+## Administration
 
-Modifier les règles
+Change the rules
 
 ```bash
 vim /root/firewall.sh
@@ -56,47 +56,47 @@ bash /root/firewall.sh
 iptables-save > /etc/firewall.conf
 ```
 
-Voir les adresses IP interdites à partir du fichier `banip.txt`
+See the forbidden IP addresses from the `banip.txt` file
 
 ```bash
 iptables -L INPUT -nv --line-numbers | grep DROP
 ```
 
-Voir les adresses IP interdites d'ipset
+See the banned IP addresses of ipset
 
 ```bash
 ipset -L
 ```
 
-> Créez un fichier `banip.txt` et ajoutez l'ip à bannir manuellement
+> Create a `banip.txt` file and add the ip to ban manually
 
-## Configuration Fail2ban
+## Fail2ban Configuration
 
-Copiez le fichier de configuration pour éviter qu'il ne soit écrasé lors d'une mise à jour
+Copy the configuration file to prevent it from being overwritten during an update
 
 ```bash
 cd /etc/fail2ban
 cp jail.conf jail.local
 ```
 
-Modification du fichier `jail.local`
+Editing the `jail.local` file
 
 ```bash
-# Liste des adresses IP ou des hôtes DNS ignorés
+# List of ignored IP addresses or DNS hosts
 ignoreip = 127.0.0.1/8 ::1
 
 # Ban Time
-bantime  = 2h
+bantime = 2h
 
-# Temps entre chaque panne
-findtime  = 20m
+# Time between each ban
+findtime = 20m
 
-# Nombre d'échecs avant un bannissement
+# Number of failures before a ban
 maxretry = 6
 ```
 
-Pour activer les jails, créez un fichier `jail-d.conf` dans le répertoire `/etc/fail2ban/jail.d` et ajoutez le nom du jail avec la valeur `True`
-Exemple avec les prisons **ssh**et **apache2**
+To enable jails, create a `jail-d.conf` file in the `/etc/fail2ban/jail.d` directory and add the jail name with the value `True`.
+Example with **ssh** and **apache2** jails
 
 ```bash
 [sshd]
@@ -107,18 +107,18 @@ enabled = true
 enabled = true
 ```
 
-### Listes de commandes
+## List of commands
 
 ```bash
-# Afficher le status des prisons actives
+# Display status of active jails
 fail2ban-client status
 
-# Afficher le status d'une prison active
+# Display status of a specific active jail
 fail2ban-client status sshd
 
-# Débannir une adresse IP
+# Unban an IP address
 fail2ban-client unban 1.2.3.4
 
-# Débannir une adresse IP d'un service
+# Unban an IP address from a specific service
 fail2ban-client set sshd unban 1.2.3.4
 ```

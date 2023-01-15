@@ -4,8 +4,6 @@
 
 [Official documentation](https://docs.docker.com/engine/install/)
 
-
-
 ```bash
 # Download an image or update it
 docker pull image_name
