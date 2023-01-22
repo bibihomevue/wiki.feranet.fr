@@ -83,20 +83,32 @@ function capitalise(str: string) {
 ```
 :::
 
-## Create a array from another one 
+## Array method
 ```js
-const myArray = [
-  { a: true, b: "000", c: "111" },
-  { a: true, b: "001", c: "110" },
-  { a: false, b: "011", c: "100" },
+const minion = [
+  { name: 'Bob', eye: 2, hair: false },
+  { name: 'Kevin', eye: 2, hair: true },
+  { name: 'Stuart', eye: 1, hair: true },
 ]
 
-return myNewArray = myArray.filter(x => x.a).map(x => x.c)
-// output: [111, 110]
+minion.filter(element => { return element.eye === 2 });
+// { name: 'Bob', eye: 2, hair: false } 
 
-return myNewArray = myArray.map(x => x.c)
-// output: [111 , 110, 100]
+minion.find(element => { return element.name === "Bob" });
+// { name: 'Bob', eye: 2, hair: false }
 
-return myNewArray = myArray.map(x => ({ d: x.a }))
-// output: [{ d: true }, {d: true}, { d: false }] 
+minion.forEach(element => { console.log(element.name) });
+// Bob Kevin Stuart
+
+minion.map(element => { return element.name });
+// ['Bob', 'Kevin', 'Stuart']
+
+minion.some(element => { return element.hair === true });
+// true
+
+minion.every(element => { return element.hair === true });
+// false
+
+minion.reduce((a, element) => { return a + element.eye }, 0);
+// 5
 ```
