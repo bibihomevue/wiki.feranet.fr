@@ -84,7 +84,7 @@ function sidebarWiki() {
         { text: 'Meraki auto reboot', link: '/wiki/linux/scheduleMeraki' },
         { text: 'Screen', link: '/wiki/linux/screen' },
         { text: 'SSH', link: '/wiki/linux/ssh' },
-        { text: 'Traitement de texte', link: '/wiki/linux/textProcessing' },
+        { text: 'Text manipulation', link: '/wiki/linux/textManipulation' },
         { text: 'Vim', link: '/wiki/linux/vim' },
       ]
     },

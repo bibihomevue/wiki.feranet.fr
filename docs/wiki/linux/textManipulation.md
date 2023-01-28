@@ -1,4 +1,4 @@
-# Text processing
+# Text manipulation
 
 ## sed
 
