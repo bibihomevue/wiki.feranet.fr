@@ -86,10 +86,12 @@ function capitalise(str: string) {
 ## Array method
 ```js
 const minion = [
-  { name: 'Bob', eye: 2, hair: false },
-  { name: 'Kevin', eye: 2, hair: true },
-  { name: 'Stuart', eye: 1, hair: true },
+  { name: "Bob", eye: 2, hair: false },
+  { name: "Kevin", eye: 2, hair: true },
+  { name: "Stuart", eye: 1, hair: true },
 ]
+
+const nameAndEye = { "Bob": 2 "Kevin": 2 "Stuart": 1}
 
 minion.filter(element => { return element.eye === 2 });
 // { name: 'Bob', eye: 2, hair: false } 
@@ -109,6 +111,9 @@ minion.some(element => { return element.hair === true });
 minion.every(element => { return element.hair === true });
 // false
 
-minion.reduce((a, element) => { return a + element.eye }, 0);
+minion.reduce((a, b) => { return a + b.eye }, 0);
+// 5
+
+Object.values(nameAndEye).reduce((a, b) => a + b, 0);
 // 5
 ```
