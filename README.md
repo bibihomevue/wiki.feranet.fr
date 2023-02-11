@@ -1,6 +1,6 @@
 # Feranet.fr
 
-WIP
+Welcome to my website, ou will find here, all my creations.
 
 ## Setup
 
