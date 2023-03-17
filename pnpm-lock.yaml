@@ -1,11 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
-  vitepress: ^1.0.0-alpha.56
+  vitepress: ^1.0.0-alpha.60
   vue: ^3.2.47
 
 devDependencies:
-  vitepress: 1.0.0-alpha.56
+  vitepress: 1.0.0-alpha.60
   vue: 3.2.47
 
 packages:
@@ -721,8 +721,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.56:
-    resolution: {integrity: sha512-FNoanHwmgWn4xZZcc8D34VKWcEs0F7e39xiVUahI7VzzI4VeiB+R/euYtPIUcTxIC2pRDhclw7/DO0JFYSGIpw==}
+  /vitepress/1.0.0-alpha.60:
+    resolution: {integrity: sha512-GI5iLDkZRqGEPixbSloT+p6pbKcMh9ykRRxt8vf9AjV1gaPit6Stg/t9WNxTdIhKVCuQMexGs1605DNApSRK2A==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3
