@@ -1,4 +1,4 @@
-# JavaScript / TypeScript
+# JavaScript - Config
 
 ## Date and time
 
@@ -82,38 +82,3 @@ function capitalise(str: string) {
 }
 ```
 :::
-
-## Array method
-```js
-const minion = [
-  { name: "Bob", eye: 2, hair: false },
-  { name: "Kevin", eye: 2, hair: true },
-  { name: "Stuart", eye: 1, hair: true },
-]
-
-const nameAndEye = { "Bob": 2 "Kevin": 2 "Stuart": 1}
-
-minion.filter(element => { return element.eye === 2 });
-// { name: 'Bob', eye: 2, hair: false } 
-
-minion.find(element => { return element.name === "Bob" });
-// { name: 'Bob', eye: 2, hair: false }
-
-minion.forEach(element => { console.log(element.name) });
-// Bob Kevin Stuart
-
-minion.map(element => { return element.name });
-// ['Bob', 'Kevin', 'Stuart']
-
-minion.some(element => { return element.hair === true });
-// true
-
-minion.every(element => { return element.hair === true });
-// false
-
-minion.reduce((a, b) => { return a + b.eye }, 0);
-// 5
-
-Object.values(nameAndEye).reduce((a, b) => a + b, 0);
-// 5
-```
