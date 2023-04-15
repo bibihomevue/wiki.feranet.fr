@@ -24,7 +24,6 @@ arr.indexOf(2)                     // 1
 arr.lastIndexOf(2)                 // 1
 arr.slice(1, 3)                    // [2, 3]
 arr.some(a => a > 2 )              // true
-arr.sort()                         // [1, 2, 3, 4]
 arr.sort((a, b) => b - a)          // [4, 3, 2, 1]
 arr.splice(1, 2)                   // [2, 3]
 arr.toString()                     // 1,2,3,4
