@@ -98,8 +98,8 @@ function sidebarSnippet() {
       collapsible: false,
       items: [
         { text: 'Bash', link: '/snippet/bash' },
-        { text: 'JS - Config', link: '/snippet/javascript-config' },
         { text: 'JS - Method', link: '/snippet/javascript-method' },
+        { text: 'JS - Config', link: '/snippet/javascript-config' },
         { text: 'Apache2 & Nginx', link: '/snippet/apache2-nginx' },
         { text: 'PowerShell', link: '/snippet/powershell' },
       ]
