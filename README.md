@@ -7,9 +7,3 @@ Welcome to my website, ou will find here, all my creations.
 ```bash
 pnpm install
 ```
-
-## Development
-
-```bash
-pnpm docs:build
-```
