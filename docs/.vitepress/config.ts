@@ -21,7 +21,7 @@ export default defineConfig({
     },
 
     nav: [
-      { text: 'Wiki', link: '/wiki/home', activeMatch: '/wiki/' },
+      { text: 'Wiki', link: '/wiki/linux/archives', activeMatch: '/wiki/' },
       { text: 'Snippet', link: '/snippet/bash', activeMatch: '/snippet/' }
     ],
 

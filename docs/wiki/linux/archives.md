@@ -50,7 +50,7 @@ p7zip -k files/folders
 p7zip -d archive.rar.7z
 ```
 
-## Fonction
+## Function
 
 ```bash
 # Usage: ex <file>
