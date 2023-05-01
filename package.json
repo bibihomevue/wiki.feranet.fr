@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "preview": "vitepress preview docs",
-    "prod": "powershell -NoProfile -Command ./.prod.ps1"
+    "preview": "vitepress preview docs"
   },
   "devDependencies": {
     "vitepress": "1.0.0-alpha.75",
