@@ -1,6 +1,6 @@
 # Feranet.fr
 
-Welcome to my website, ou will find here, all my creations.
+Welcome to my website
 
 ## Setup
 
