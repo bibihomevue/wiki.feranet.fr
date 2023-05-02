@@ -10,8 +10,11 @@ hero:
       text: Wiki
       link: /wiki/linux/archives
     - theme: alt
-      text: Snippet
-      link: /snippet/bash
+      text: Snippets
+      link: /snippets/bash
+    - theme: alt
+      text: Tools
+      link: /tools
 
 features:
   - icon: 🚀

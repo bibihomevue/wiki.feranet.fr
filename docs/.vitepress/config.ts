@@ -21,8 +21,9 @@ export default defineConfig({
     },
 
     nav: [
-      { text: 'Wiki', link: '/wiki/linux/archives', activeMatch: '/wiki/' },
-      { text: 'Snippet', link: '/snippet/bash', activeMatch: '/snippet/' }
+      { text: 'Wiki', link: '/wiki/linux/archives' },
+      { text: 'Snippets', link: '/snippets/bash' },
+      { text: 'Tools', link: '/tools' },
     ],
 
     sidebar: {
@@ -55,15 +56,15 @@ export default defineConfig({
           ]
         }
       ],
-      '/snippet/': [
+      '/snippets/': [
         {
-          text: 'Snippet',
+          text: 'Snippets',
           items: [
-            { text: 'Bash', link: '/snippet/bash' },
-            { text: 'JS - Method', link: '/snippet/javascript-method' },
-            { text: 'JS - Config', link: '/snippet/javascript-config' },
-            { text: 'Apache2 & Nginx', link: '/snippet/apache2-nginx' },
-            { text: 'PowerShell', link: '/snippet/powershell' }
+            { text: 'Bash', link: '/snippets/bash' },
+            { text: 'JS - Method', link: '/snippets/javascript-method' },
+            { text: 'JS - Config', link: '/snippets/javascript-config' },
+            { text: 'Apache2 & Nginx', link: '/snippets/apache2-nginx' },
+            { text: 'PowerShell', link: '/snippets/powershell' }
           ]
         }
       ],
@@ -86,9 +87,8 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the Creative Commons Zero v1.0 Universal',
-      copyright: 'Copyright © 2023 — feranet.fr'
+      copyright: `Copyright © ${new Date().getFullYear()} — feranet.fr`
     },
 
   }
 })
-

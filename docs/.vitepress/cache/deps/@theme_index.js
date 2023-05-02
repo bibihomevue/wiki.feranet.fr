@@ -1,3 +1,5 @@
+import "./chunk-7FP5O474.js";
+
 // node_modules/.pnpm/vitepress@1.0.0-alpha.75_@algolia+client-search@4.17.0/node_modules/vitepress/dist/client/theme-default/index.js
 import "C:/Users/Florian/Desktop/GitHub/Public/feranet.fr/node_modules/.pnpm/vitepress@1.0.0-alpha.75_@algolia+client-search@4.17.0/node_modules/vitepress/dist/client/theme-default/styles/fonts.css";
 
