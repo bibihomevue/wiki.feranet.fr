@@ -17,8 +17,8 @@
 | `sed -i 's/string1/string2/g' file.txt` | Replace the string 'string1' with 'string2' in a file |
 | `sed 's/^./\u&/'`                       | Capitalize the first letter of a word or phrase       |
 | `sed -n '2p'`                           | Only display the 2nd line                             |
-| `sed '2i/word'`                         | Add 'word' to the 2nd line                            |
-| `sed '$a/word'`                         | Add 'word' to the last line                           |
+| `sed '2i word'`                         | Add 'word' to the 2nd line                            |
+| `sed '$a word'`                         | Add 'word' to the last line                           |
 | `sed 's/^/word1/'`                      | Add 'word1' to the beginning of every line            |
 | `sed 's/$/word2/'`                      | Add 'word2' to the end of every line                  |
 | `sed '/^word1.*/i word2' file.txt`      | Add 'word2' before 'word1'                            |
