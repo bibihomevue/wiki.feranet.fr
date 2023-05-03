@@ -12,9 +12,6 @@ hero:
     - theme: alt
       text: Snippets
       link: /snippets/bash
-    - theme: alt
-      text: Tools
-      link: /tools
 
 features:
   - icon: 🚀
