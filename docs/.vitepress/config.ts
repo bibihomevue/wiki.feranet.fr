@@ -24,6 +24,7 @@ export default defineConfig({
       { text: 'Wiki', link: '/wiki/linux/archives' },
       { text: 'Snippets', link: '/snippets/bash' },
       { text: 'Tools', link: '/tools' },
+      { text: 'Memo', link: '/memo' },
     ],
 
     sidebar: {
