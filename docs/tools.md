@@ -1,5 +1,5 @@
 ---
-title: Tools 
+title: Tools
 ---
 
 <script setup>
@@ -7,7 +7,7 @@ title: Tools
   import PasswordGenerator from './components/PasswordGenerator.vue';
 </script>
 
-# Tools <Badge type="warning" text="WIP" />
+# Tools <Badge type="danger" text="WIP" />
 
 ## Hash generator
 <HashGenerator />

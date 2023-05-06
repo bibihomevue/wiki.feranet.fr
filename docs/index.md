@@ -1,6 +1,8 @@
 ---
 layout: home
 
+title: Home
+
 hero:
   name: Feranet.fr
   text: Welcome to my website

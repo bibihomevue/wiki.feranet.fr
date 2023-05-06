@@ -83,7 +83,7 @@ onMounted(() => generatePassword());
     <div>
       <button @click="generatePassword">Generate</button>
       <button @click="resetPassword">Reset</button>
-      <button @click="pastPassword">Past <span v-if="isPast">✅</span></button>
+      <button @click="pastPassword">Past <span v-if="isPast">👍</span></button>
       <hr>
       <h3>{{ password }}</h3>
     </div>
@@ -123,7 +123,7 @@ h3 {
 }
 
 button:hover {
-  color: var(--vp-c-green-light);
+  color: var(--vp-c-brand-light);
 }
 
 button:nth-child(2) {
@@ -131,6 +131,6 @@ button:nth-child(2) {
 }
 
 input[type="checkbox"] {
-  accent-color: var(--vp-c-green-dark);
+  accent-color: var(--vp-c-brand-dark);
 }
 </style>

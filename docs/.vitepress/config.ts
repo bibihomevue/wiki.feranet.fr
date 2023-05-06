@@ -3,14 +3,14 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   lang: 'en-US',
   title: 'Feranet.fr',
-  description: 'Welcome to my website',
+  titleTemplate: 'Feranet.fr | :title',
 
   lastUpdated: true,
   cleanUrls: true,
 
   head: [
     ['meta', { name: 'theme-color', content: '#3c8772' }],
-    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/logo.svg' }],
     ['script', { defer: '' , src: '/_vercel/insights/script.js' }]
   ],
 
