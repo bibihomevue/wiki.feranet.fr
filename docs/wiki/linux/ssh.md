@@ -78,6 +78,15 @@ ssh root@1.2.3.4 "$(declare -f fonction_creation); fonction_creation" > /dev/nul
 ssh -P 5678 root@1.2.3.4 "$(declare -f fonction_creation); fonction_creation" > /dev/null 2>&1
 ```
 
+## SSH tunnel
+
+```bash
+ssh root@1.2.3.4 -L 2500:127.0.0.1:3000 -N -v
+
+# On port 5678
+ssh -P 5678  root@1.2.3.4 -L 2500:127.0.0.1:3000 -N -v
+```
+
 ## Other useful commands
 
 ```bash
