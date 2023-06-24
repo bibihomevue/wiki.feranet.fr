@@ -8,7 +8,6 @@
     "preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "@types/crypto-js": "^4.1.1",
     "vitepress": "1.0.0-beta.3",
     "vue": "^3.3.4"
   }
