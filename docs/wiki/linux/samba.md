@@ -1,12 +1,30 @@
 # Share SAMBA
 
-Update and installation
+## Server
+
 ```bash
-apt update && apt install smbclient cifs-utils -y
+sudo apt install samba
+sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.back
 ```
 
-Directory creation
+`/etc/samba/smb.conf`
 ```bash
+[share]
+   path = /home/user/share
+   browseable = yes
+   read only = no
+```
+
+```bash
+sudo smbpasswd -a user
+sudo service smbd restart
+```
+
+## Client
+
+Installation
+```bash
+sudo apt install smbclient cifs-utils
 mkdir /home/share
 ```
 
