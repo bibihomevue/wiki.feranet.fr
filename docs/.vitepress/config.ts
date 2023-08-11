@@ -72,7 +72,6 @@ export default defineConfig({
             { text: "JS - Method", link: "/snippets/javascript-method" },
             { text: "JS - Config", link: "/snippets/javascript-config" },
             { text: "Apache2 & Nginx", link: "/snippets/apache2-nginx" },
-            { text: "PowerShell", link: "/snippets/powershell" },
           ],
         },
       ],

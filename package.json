@@ -1,15 +1,17 @@
 {
   "name": "feranet.fr",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "test": "vitepress build docs --check",
-    "preview": "vitepress preview docs"
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "test": "vitepress build docs --check"
   },
+  "author": "Fl0wyn",
+  "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-beta.7",
-    "vue": "^3.3.4"
+    "vitepress": "1.0.0-rc.4"
   }
 }
