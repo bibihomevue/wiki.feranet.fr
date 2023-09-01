@@ -82,3 +82,52 @@ function capitalise(str: string) {
 }
 ```
 :::
+
+## Generate a random number or string
+::: code-group
+```js [JavaScript]
+const randomGen = {
+  NC: "0123456789",
+  LC: "abcdefghijklmnopqrstuvwxyz",
+  UC: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+
+  _generate: (c, n) => Array.from({ length: n ? n : 1}, () => c[Math.floor(Math.random() * c.length)]).join(""),
+
+  number(n) { return  this._generate(this.NC, n) },
+  lowercase(n) { return  this._generate(this.LC, n) },
+  uppercase(n) { return this._generate(this.UC, n) },
+  all(n) { return this._generate(this.NC + this.UC + this.LC, n) },
+};
+
+console.log(randomGen.number(10)) // 9836102222
+```
+```ts [TypeScript]
+type RandomGen = {
+  NC: string;
+  LC: string;
+  UC: string;
+
+  _generate: (c: string, n?: number) => string;
+
+  number(n: number): string;
+  lowercase(n: number): string;
+  uppercase(n: number): string;
+  all(n: number): string;
+};
+
+const randomGen: RandomGen = {
+  NC: "0123456789",
+  LC: "abcdefghijklmnopqrstuvwxyz",
+  UC: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+
+  _generate: (c, n = 1) => Array.from({ length: n }, () => c[Math.floor(Math.random() * c.length)]).join(""),
+
+  number(n) { return this._generate(this.NC, n) },
+  lowercase(n) { return this._generate(this.LC, n) },
+  uppercase(n) { return this._generate(this.UC, n) },
+  all(n) { return this._generate(this.NC + this.UC + this.LC, n) },
+};
+
+console.log(randomGen.number(10)); // 9836102222
+```
+:::
