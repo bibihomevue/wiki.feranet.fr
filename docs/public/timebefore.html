@@ -49,10 +49,11 @@
       font-size: 3.75rem;
     }
 
-    picture {
-      position: absolute;
-      top: 0;
-      right: 0;
+    code {
+      display: none;
+      font-size: 2.5rem;
+      background-color: tomato;
+      padding: 1rem;
     }
   </style>
 </head>
@@ -63,17 +64,24 @@
     <h2 id="daysCount"></h2>
     <h2 id="hoursCount"></h2>
     <h2 id="secondsCount"></h2>
+    <code></code>
   </div>
 
   <script>
+    // Example: ?date=2042-01-01&msg=Hello&lang=en
+
     const params = new URL(document.location).searchParams;
     const paramDate = params.get("date") || '2042-01-01'
     const paramMsg = params.get("msg") || 'Temps avant 2042'
-    const paramLang = params.get("lang") || 'fr'
+    const paramLang = params.get("lang")?.toLowerCase() || 'en'
 
     const lang = {
+      en: ['days', 'Hours', 'Seconds'],
       fr: ['Jours', 'Heures', 'Secondes'],
-      en: ['days', 'Hours', 'Seconds']
+      es: ['Días', 'Horas', 'Segundos'],
+      de: ['Tage', 'Stunden', 'Sekunden'],
+      ja: ['日', '時間', '秒'],
+      zh: ['天', '小时', '秒']
     };
 
     const elements = {
@@ -86,7 +94,8 @@
     const updateCountdown = () => {
       const { titleMsg, daysCount, hoursCount, secondsCount } = elements;
 
-      const departureDate = new Date(paramDate);
+      const departureDate = !isNaN(new Date(paramDate)) ? new Date(paramDate) : new Date()
+
       const currentDate = new Date();
       const millisecondsPerDay = 1000 * 60 * 60 * 24;
       const remaining = (departureDate - currentDate) / millisecondsPerDay;
@@ -96,10 +105,16 @@
         Math.ceil(remaining * 24 * 60 * 60)
       ];
 
-      titleMsg.innerText = paramMsg;
-      daysCount.innerText = `${days} ${lang[paramLang][0]}`;
-      hoursCount.innerText = `${hours} ${lang[paramLang][1]}`;
-      secondsCount.innerText = `${seconds} ${lang[paramLang][2]}`;
+      if (lang[paramLang]) {
+        titleMsg.innerText = paramMsg;
+        daysCount.innerText = `${days} ${lang[paramLang][0]}`;
+        hoursCount.innerText = `${hours} ${lang[paramLang][1]}`;
+        secondsCount.innerText = `${seconds} ${lang[paramLang][2]}`;
+      } else {
+        const error = document.querySelector('code')
+        error.style.display = 'block'
+        error.innerText = `Language not found \r ${Object.keys(lang).join(', ')}`
+      }
     }
 
     updateCountdown();
