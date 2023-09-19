@@ -4,121 +4,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon"
-    href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAuMDAgMC4wMCAxODAuMDAgMTYwLjAwIj4KPHBhdGggc3Ryb2tlPSIjZmE5MzI2IiBzdHJva2Utd2lkdGg9IjIuMDAiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJidXR0IiB2ZWN0b3ItZWZmZWN0PSJub24tc2NhbGluZy1zdHJva2UiIGQ9IgogIE0gMTAwLjcwIDU5Ljk5CiAgUSA5My44OCA1OS45NiA4Ni40OCA2MC4wNAogIEMgODIuODMgNjAuMDggODAuNTkgNjIuMjUgNzcuOTQgNjQuNDAiCi8+CjxwYXRoIGZpbGw9IiNmY2FmM2MiIGQ9IgogIE0gNDYuODUgMC4wMAogIEwgNTQuMDUgMC4wMAogIEMgNzQuMTkgMi4zNyA4OS4wMCA5LjU4IDk3Ljc3IDI4LjYzCiAgUSA5Ny45OSAyOS4wOSA5OC40MSAyOC44MgogIEMgMTEyLjI2IDE5Ljc3IDEzMC40NCAxOC4wOSAxNDYuMjAgMjIuMDYKICBRIDE2NC41NyAyNi42OCAxNzQuNTIgNDIuNzIKICBDIDE3Ni44MyA0Ni40MyAxODQuMTIgNTkuOTcgMTc0LjczIDYwLjAxCiAgUSAxNjcuMjMgNjAuMDQgMTU5LjQ0IDU5Ljk4CiAgQSAxLjA3IDEuMDYgNzQuNyAwIDEgMTU4LjUyIDU5LjQ1CiAgTCAxNTIuMzUgNDguOTMKICBBIDIuNzQgMi43NCAwLjAgMCAwIDE0Ny42NSA0OC44OQogIEwgMTQxLjI4IDU5LjMyCiAgQSAxLjQyIDEuNDEgMTUuNCAwIDEgMTQwLjA3IDYwLjAwCiAgTCAxMDAuNzAgNTkuOTkKICBRIDkzLjg4IDU5Ljk2IDg2LjQ4IDYwLjA0CiAgQyA4Mi44MyA2MC4wOCA4MC41OSA2Mi4yNSA3Ny45NCA2NC40MAogIFEgNTYuNjQgODUuNzcgMzUuMzcgMTA2Ljk5CiAgQyAzMi42NCAxMDkuNzIgMjguODggMTEwLjkwIDI2LjcxIDEwNi45NwogIEMgMTQuMzkgODQuNjQgMjMuMjAgNjAuOTMgNDEuMDMgNDQuNzUKICBRIDQxLjQ5IDQ0LjMzIDQxLjE4IDQzLjgwCiAgTCAzMi4yNyAyOC43NgogIEEgMi42MyAyLjYzIDAuMCAwIDAgMjcuNzMgMjguNzcKICBMIDIxLjk2IDM4LjY3CiAgQSAyLjY1IDIuNjMgLTc1LjAgMCAxIDE5LjcwIDM5Ljk4CiAgUSAxMi45OCA0MC4wMiA1LjUwIDQwLjA2CiAgQyAwLjQ3IDQwLjA5IDAuMDIgMzYuNDQgMS4xMSAzMi40NwogIEMgNi44NiAxMS41NCAyNi41NiAxLjU4IDQ2Ljg1IDAuMDAKICBaIgovPgo8cGF0aCBmaWxsPSIjZjc3NzBmIiBkPSIKICBNIDEwMC43MCA1OS45OQogIFEgMTE2LjE2IDEwNS40MyAxMTAuNzcgMTUwLjc0CiAgUSAxMDkuOTEgMTU3LjkyIDEwMi4xNiAxNjAuMDAKICBMIDc4LjIzIDE2MC4wMAogIEMgNzEuNjIgMTU3LjU4IDY5LjM1IDE1Mi4yNSA3MS4zNCAxNDUuNzEKICBDIDc4LjU3IDEyMS45OSA4Ni43NSA4OC4yMiA3Ny45NCA2NC40MAogIEMgODAuNTkgNjIuMjUgODIuODMgNjAuMDggODYuNDggNjAuMDQKICBRIDkzLjg4IDU5Ljk2IDEwMC43MCA1OS45OQogIFoiCi8+Cjwvc3ZnPgo="
-    type="image/x-icon">
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="shortcut icon" href="palm.svg" type="image/x-icon">
   <title>Time Before</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    *,
-    ::after,
-    ::before {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      font-feature-settings: normal;
-      font-variation-settings: normal
-    }
-
     body {
-      background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0idmlzdWFsIiB2aWV3Qm94PSIwIDAgOTYwIDU0MCIgd2lkdGg9Ijk2MCIgaGVpZ2h0PSI1NDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9Ijk2MCIgaGVpZ2h0PSI1NDAiIGZpbGw9IiM0RkFDRjciPjwvcmVjdD48cGF0aCBkPSJNMCAzNzdMMjIuOCAzNzAuMkM0NS43IDM2My4zIDkxLjMgMzQ5LjcgMTM3IDM0M0MxODIuNyAzMzYuMyAyMjguMyAzMzYuNyAyNzQgMzQ0LjhDMzE5LjcgMzUzIDM2NS4zIDM2OSA0MTEuMiAzNzguM0M0NTcgMzg3LjcgNTAzIDM5MC4zIDU0OC44IDM4MS43QzU5NC43IDM3MyA2NDAuMyAzNTMgNjg2IDM0OC4zQzczMS43IDM0My43IDc3Ny4zIDM1NC4zIDgyMyAzNjMuMkM4NjguNyAzNzIgOTE0LjMgMzc5IDkzNy4yIDM4Mi41TDk2MCAzODZMOTYwIDU0MUw5MzcuMiA1NDFDOTE0LjMgNTQxIDg2OC43IDU0MSA4MjMgNTQxQzc3Ny4zIDU0MSA3MzEuNyA1NDEgNjg2IDU0MUM2NDAuMyA1NDEgNTk0LjcgNTQxIDU0OC44IDU0MUM1MDMgNTQxIDQ1NyA1NDEgNDExLjIgNTQxQzM2NS4zIDU0MSAzMTkuNyA1NDEgMjc0IDU0MUMyMjguMyA1NDEgMTgyLjcgNTQxIDEzNyA1NDFDOTEuMyA1NDEgNDUuNyA1NDEgMjIuOCA1NDFMMCA1NDFaIiBmaWxsPSIjZmNhZjNjIj48L3BhdGg+PHBhdGggZD0iTTAgMzcxTDIyLjggMzc0LjJDNDUuNyAzNzcuMyA5MS4zIDM4My43IDEzNyAzODcuOEMxODIuNyAzOTIgMjI4LjMgMzk0IDI3NCAzOTUuMkMzMTkuNyAzOTYuMyAzNjUuMyAzOTYuNyA0MTEuMiAzOTMuMkM0NTcgMzg5LjcgNTAzIDM4Mi4zIDU0OC44IDM4M0M1OTQuNyAzODMuNyA2NDAuMyAzOTIuMyA2ODYgMzkwLjdDNzMxLjcgMzg5IDc3Ny4zIDM3NyA4MjMgMzc1Qzg2OC43IDM3MyA5MTQuMyAzODEgOTM3LjIgMzg1TDk2MCAzODlMOTYwIDU0MUw5MzcuMiA1NDFDOTE0LjMgNTQxIDg2OC43IDU0MSA4MjMgNTQxQzc3Ny4zIDU0MSA3MzEuNyA1NDEgNjg2IDU0MUM2NDAuMyA1NDEgNTk0LjcgNTQxIDU0OC44IDU0MUM1MDMgNTQxIDQ1NyA1NDEgNDExLjIgNTQxQzM2NS4zIDU0MSAzMTkuNyA1NDEgMjc0IDU0MUMyMjguMyA1NDEgMTgyLjcgNTQxIDEzNyA1NDFDOTEuMyA1NDEgNDUuNyA1NDEgMjIuOCA1NDFMMCA1NDFaIiBmaWxsPSIjZmJhMjMwIj48L3BhdGg+PHBhdGggZD0iTTAgNDM4TDIyLjggNDM4LjVDNDUuNyA0MzkgOTEuMyA0NDAgMTM3IDQzNi43QzE4Mi43IDQzMy4zIDIyOC4zIDQyNS43IDI3NCA0MjcuMkMzMTkuNyA0MjguNyAzNjUuMyA0MzkuMyA0MTEuMiA0MzguM0M0NTcgNDM3LjMgNTAzIDQyNC43IDU0OC44IDQxNkM1OTQuNyA0MDcuMyA2NDAuMyA0MDIuNyA2ODYgNDAwLjJDNzMxLjcgMzk3LjcgNzc3LjMgMzk3LjMgODIzIDQwMS44Qzg2OC43IDQwNi4zIDkxNC4zIDQxNS43IDkzNy4yIDQyMC4zTDk2MCA0MjVMOTYwIDU0MUw5MzcuMiA1NDFDOTE0LjMgNTQxIDg2OC43IDU0MSA4MjMgNTQxQzc3Ny4zIDU0MSA3MzEuNyA1NDEgNjg2IDU0MUM2NDAuMyA1NDEgNTk0LjcgNTQxIDU0OC44IDU0MUM1MDMgNTQxIDQ1NyA1NDEgNDExLjIgNTQxQzM2NS4zIDU0MSAzMTkuNyA1NDEgMjc0IDU0MUMyMjguMyA1NDEgMTgyLjcgNTQxIDEzNyA1NDFDOTEuMyA1NDEgNDUuNyA1NDEgMjIuOCA1NDFMMCA1NDFaIiBmaWxsPSIjZmE5NDI0Ij48L3BhdGg+PHBhdGggZD0iTTAgNDQzTDIyLjggNDQzLjNDNDUuNyA0NDMuNyA5MS4zIDQ0NC4zIDEzNyA0NDUuM0MxODIuNyA0NDYuMyAyMjguMyA0NDcuNyAyNzQgNDQ4LjdDMzE5LjcgNDQ5LjcgMzY1LjMgNDUwLjMgNDExLjIgNDUwLjVDNDU3IDQ1MC43IDUwMyA0NTAuMyA1NDguOCA0NTAuOEM1OTQuNyA0NTEuMyA2NDAuMyA0NTIuNyA2ODYgNDUyLjJDNzMxLjcgNDUxLjcgNzc3LjMgNDQ5LjMgODIzIDQ0OC4yQzg2OC43IDQ0NyA5MTQuMyA0NDcgOTM3LjIgNDQ3TDk2MCA0NDdMOTYwIDU0MUw5MzcuMiA1NDFDOTE0LjMgNTQxIDg2OC43IDU0MSA4MjMgNTQxQzc3Ny4zIDU0MSA3MzEuNyA1NDEgNjg2IDU0MUM2NDAuMyA1NDEgNTk0LjcgNTQxIDU0OC44IDU0MUM1MDMgNTQxIDQ1NyA1NDEgNDExLjIgNTQxQzM2NS4zIDU0MSAzMTkuNyA1NDEgMjc0IDU0MUMyMjguMyA1NDEgMTgyLjcgNTQxIDEzNyA1NDFDOTEuMyA1NDEgNDUuNyA1NDEgMjIuOCA1NDFMMCA1NDFaIiBmaWxsPSIjZjk4NjE5Ij48L3BhdGg+PHBhdGggZD0iTTAgNDc1TDIyLjggNDc5LjJDNDUuNyA0ODMuMyA5MS4zIDQ5MS43IDEzNyA0OTEuM0MxODIuNyA0OTEgMjI4LjMgNDgyIDI3NCA0ODRDMzE5LjcgNDg2IDM2NS4zIDQ5OSA0MTEuMiA0OTguOEM0NTcgNDk4LjcgNTAzIDQ4NS4zIDU0OC44IDQ3OS44QzU5NC43IDQ3NC4zIDY0MC4zIDQ3Ni43IDY4NiA0NzguMkM3MzEuNyA0NzkuNyA3NzcuMyA0ODAuMyA4MjMgNDgzLjhDODY4LjcgNDg3LjMgOTE0LjMgNDkzLjcgOTM3LjIgNDk2LjhMOTYwIDUwMEw5NjAgNTQxTDkzNy4yIDU0MUM5MTQuMyA1NDEgODY4LjcgNTQxIDgyMyA1NDFDNzc3LjMgNTQxIDczMS43IDU0MSA2ODYgNTQxQzY0MC4zIDU0MSA1OTQuNyA1NDEgNTQ4LjggNTQxQzUwMyA1NDEgNDU3IDU0MSA0MTEuMiA1NDFDMzY1LjMgNTQxIDMxOS43IDU0MSAyNzQgNTQxQzIyOC4zIDU0MSAxODIuNyA1NDEgMTM3IDU0MUM5MS4zIDU0MSA0NS43IDU0MSAyMi44IDU0MUwwIDU0MVoiIGZpbGw9IiNmNzc3MGYiPjwvcGF0aD48L3N2Zz4=);
+      background-image: url(background.svg);
       background-position: center center;
       background-size: cover;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-    }
-
-    div {
-      margin-top: 12rem;
-      text-align: center;
-      color: #FFF;
-      line-height: 1;
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: 4.5rem;
-      margin-bottom: 3rem
-    }
-
-    h2 {
-      font-size: 3.75rem;
-    }
-
-    code {
-      display: none;
-      font-size: 2.5rem;
-      background-color: tomato;
-      padding: 1rem;
     }
   </style>
 </head>
 
-<body>
-  <div>
-    <h1 id="titleMsg"></h1>
-    <h2 id="daysCount"></h2>
-    <h2 id="hoursCount"></h2>
-    <h2 id="secondsCount"></h2>
-    <code></code>
-  </div>
+<body class="min-h-screen flex justify-center">
+  <div id="app" class="mt-48 text-center text-white"></div>
 
   <script>
-    // Example: ?date=2042-01-01&msg=Hello&lang=en
+    const { createApp, ref } = Vue
 
-    const params = new URL(document.location).searchParams;
-    const paramDate = params.get("date") || '2042-01-01'
-    const paramMsg = params.get("msg") || 'Temps avant 2042'
-    const paramLang = params.get("lang")?.toLowerCase() || 'en'
+    createApp({
+      setup() {
 
-    const lang = {
-      en: ['days', 'Hours', 'Seconds'],
-      fr: ['Jours', 'Heures', 'Secondes'],
-      es: ['Días', 'Horas', 'Segundos'],
-      de: ['Tage', 'Stunden', 'Sekunden'],
-      ja: ['日', '時間', '秒'],
-      zh: ['天', '小时', '秒']
-    };
+        const p = new URL(document.location).searchParams;
+        const params = {
+          date: p.get("date") || '2100-01-01',
+          hour: p.get("hour") || '00:00:00',
+          msg: p.get("msg") || 'Time Before',
+        }
 
-    const elements = {
-      titleMsg: document.querySelector('#titleMsg'),
-      daysCount: document.querySelector('#daysCount'),
-      hoursCount: document.querySelector('#hoursCount'),
-      secondsCount: document.querySelector('#secondsCount')
-    };
+        const msg = params.msg
+        const endDate = dayjs(`${params.date}T${params.hour}+02:00`)
 
-    const updateCountdown = () => {
-      const { titleMsg, daysCount, hoursCount, secondsCount } = elements;
+        const date = ref({})
 
-      const departureDate = !isNaN(new Date(paramDate)) ? new Date(paramDate) : new Date()
+        if (endDate.isValid()) {
+          const updateDate = () => {
+            date.value.day = endDate.diff(dayjs(), 'd')
+            date.value.hour = endDate.diff(dayjs(), 'h')
+            date.value.second = endDate.diff(dayjs(), 's')
+          }
+          updateDate();
+          setInterval(updateDate, 1000);
+        }
 
-      const currentDate = new Date();
-      const millisecondsPerDay = 1000 * 60 * 60 * 24;
-      const remaining = (departureDate - currentDate) / millisecondsPerDay;
-      const [days, hours, seconds] = [
-        Math.ceil(remaining),
-        Math.ceil(remaining * 24),
-        Math.ceil(remaining * 24 * 60 * 60)
-      ];
-
-      if (lang[paramLang]) {
-        titleMsg.innerText = paramMsg;
-        daysCount.innerText = `${days} ${lang[paramLang][0]}`;
-        hoursCount.innerText = `${hours} ${lang[paramLang][1]}`;
-        secondsCount.innerText = `${seconds} ${lang[paramLang][2]}`;
-      } else {
-        const error = document.querySelector('code')
-        error.style.display = 'block'
-        error.innerText = `Language not found \r ${Object.keys(lang).join(', ')}`
-      }
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+        return {
+          date,
+          msg,
+        }
+      },
+      template: `
+        <h1 class="text-7xl font-bold mb-8">{{msg}}</h1>
+        <div class="text-6xl font-bold">{{ date.day }} Jours</div>
+        <div class="text-6xl font-bold">{{ date.hour }} Heures</div>
+        <div class="text-6xl font-bold">{{ date.second }} Secondes</div>
+        `
+    }).mount('#app')
   </script>
 </body>
 
