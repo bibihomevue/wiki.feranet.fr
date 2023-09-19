@@ -5,22 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="shortcut icon" href="palm.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="img/palm.svg" type="image/x-icon">
   <title>Time Before</title>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-image: url(background.svg);
-      background-position: center center;
-      background-size: cover;
-    }
-  </style>
 </head>
 
-<body class="min-h-screen flex justify-center">
-  <div id="app" class="mt-48 text-center text-white"></div>
+<body class="min-h-screen flex justify-center bg-center bg-cover">
+  <div id="app" class="mt-48 text-center text-white">
+    <!--  -->
+  </div>
 
   <script>
     const { createApp, ref } = Vue
@@ -28,38 +24,123 @@
     createApp({
       setup() {
 
-        const p = new URL(document.location).searchParams;
-        const params = {
-          date: p.get("date") || '2100-01-01',
-          hour: p.get("hour") || '00:00:00',
-          msg: p.get("msg") || 'Time Before',
+        const dark = () => {
+          document.body.setAttribute('data-bs-theme', 'dark')
+          document.body.style.backgroundImage = 'url("img/background-dark.svg")'
+          return "img/moon.svg"
         }
 
-        const msg = params.msg
-        const endDate = dayjs(`${params.date}T${params.hour}+02:00`)
+        const light = () => {
+          document.body.setAttribute('data-bs-theme', 'light')
+          document.body.style.backgroundImage = 'url("img/background-light.svg")'
+          return "img/sun.svg"
+        }
 
-        const date = ref({})
-
-        if (endDate.isValid()) {
-          const updateDate = () => {
-            date.value.day = endDate.diff(dayjs(), 'd')
-            date.value.hour = endDate.diff(dayjs(), 'h')
-            date.value.second = endDate.diff(dayjs(), 's')
+        const changeTheme = () => {
+          if (document.body.getAttribute('data-bs-theme') === 'light') {
+            imgTheme.value = dark()
+          } else {
+            imgTheme.value = light()
           }
-          updateDate();
-          setInterval(updateDate, 1000);
+        }
+
+        const updateThemeToHour = () => {
+          const hours = new Date().getHours()
+          if (hours >= 19 || hours <= 7) {
+            imgTheme.value = dark()
+          } else {
+            imgTheme.value = light()
+          }
+        }
+
+        const imgTheme = ref(light())
+        updateThemeToHour()
+
+        const p = new URL(document.location).searchParams;
+        const params = {
+          date: p.get("date"),
+          hour: p.get("hour"),
+          msg: p.get("msg"),
+        }
+
+        const isNotEmpty = ref(true)
+        const date = ref({})
+        const msg = params.msg
+        const error = ref(null)
+
+        if (Object.values(params).every(x => x === null)) {
+          isNotEmpty.value = false
+        } else {
+          const endDate = dayjs(`${params.date}T${params.hour}+02:00`)
+
+          if (endDate.isValid()) {
+            const updateDate = () => {
+              date.value.day = endDate.diff(dayjs(), 'd')
+              date.value.hour = endDate.diff(dayjs(), 'h')
+              date.value.second = endDate.diff(dayjs(), 's')
+            }
+
+            updateDate();
+            setInterval(updateDate, 1000);
+          } else {
+            error.value = 'Date invalide'
+          }
+        }
+
+        const inputText = ref('')
+        const inputDate = ref('')
+        const inputTime = ref('')
+
+        const go = () => {
+          const URL = `?msg=${inputText.value}&date=${inputDate.value}&hour=${inputTime.value}:00`
+          document.location.href = URL;
         }
 
         return {
+          changeTheme,
+          isNotEmpty,
           date,
           msg,
+          imgTheme,
+          error,
+          go,
+          inputText,
+          inputDate,
+          inputTime
         }
       },
       template: `
-        <h1 class="text-7xl font-bold mb-8">{{msg}}</h1>
-        <div class="text-6xl font-bold">{{ date.day }} Jours</div>
-        <div class="text-6xl font-bold">{{ date.hour }} Heures</div>
-        <div class="text-6xl font-bold">{{ date.second }} Secondes</div>
+        <img :src="imgTheme" width="200" class="absolute top-0 right-0 cursor-pointer" @click="changeTheme">
+        <div v-if="isNotEmpty">
+          <h1 class="text-7xl font-bold mb-8">{{msg}}</h1>
+
+          <div class="bg-red-600 font-semibold text-4xl p-4 rounded shadow" v-if="error">Erreur: {{error}}</div>
+          <div v-else>
+            <div class="text-6xl font-bold">{{ date.day }} Jours</div>
+            <div class="text-6xl font-bold">{{ date.hour }} Heures</div>
+            <div class="text-6xl font-bold">{{ date.second }} Secondes</div>
+          </div>
+        </div>
+        <div v-else>
+          <div class="text-white font-semibold text-5xl pb-8">Oh non, c'est vide 🥺</div>
+          <div class="flex flex-col gap-4 text-start text-2xl">
+            <div>
+              <label>Message</label>
+              <input class="text-slate-800 w-full rounded p-2 my-2" type="text" v-model="inputText">
+            </div>
+            <div class="grid grid-flow-col gap-4">
+              <div>
+                <label>Date</label>
+                <input class="text-slate-800 w-full rounded p-2 my-2" type="date" v-model="inputDate">
+              </div>
+              <div>
+                <label>Heure</label>
+                <input class="text-slate-800 w-full rounded p-2 my-2" type="time" v-model="inputTime">
+              </div>
+            </div>
+          </div>
+          <button @click="go" class="w-full mt-6 text-2xl text-white hover:bg-white hover:text-slate-800 font-bold py-2 px-4 rounded">Lancer le compteur</button>
+        </div>
         `
     }).mount('#app')
   </script>
