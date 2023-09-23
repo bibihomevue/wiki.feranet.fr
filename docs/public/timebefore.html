@@ -1,180 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicon.ico">
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="shortcut icon" href="img/palm.svg" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Time Before</title>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" crossorigin src="assets/index-62190e4a.js"></script>
+  <link rel="stylesheet" href="assets/index-e43a15b1.css">
 </head>
 
 <body class="min-h-screen flex justify-center bg-center bg-cover">
-  <div id="app" class="mt-48 text-center text-white"></div>
-
-  <script>
-    var Confetti = function () { var t = function () { return function () { this.gravity = 10, this.particle_count = 75, this.particle_size = 1, this.explosion_power = 25, this.destroy_target = !0, this.fade = !1 } }(), e = function () { function e(n) { var r = this; if (this.bursts = [], this.setCount = function (t) { if ("number" != typeof t) throw new Error("Input must be of type 'number'"); e.CONFIG.particle_count = t }, this.setPower = function (t) { if ("number" != typeof t) throw new Error("Input must be of type 'number'"); e.CONFIG.explosion_power = t }, this.setSize = function (t) { if ("number" != typeof t) throw new Error("Input must be of type 'number'"); e.CONFIG.particle_size = t }, this.setFade = function (t) { if ("boolean" != typeof t) throw new Error("Input must be of type 'boolean'"); e.CONFIG.fade = t }, this.destroyTarget = function (t) { if ("boolean" != typeof t) throw new Error("Input must be of type 'boolean'"); e.CONFIG.destroy_target = t }, this.setupCanvasContext = function () { if (!e.CTX) { var t = document.createElement("canvas"); e.CTX = t.getContext("2d"), t.width = 2 * window.innerWidth, t.height = 2 * window.innerHeight, t.style.position = "fixed", t.style.top = "0", t.style.left = "0", t.style.width = "calc(100%)", t.style.height = "calc(100%)", t.style.margin = "0", t.style.padding = "0", t.style.zIndex = "999999999", t.style.pointerEvents = "none", document.body.appendChild(t), window.addEventListener("resize", function () { t.width = 2 * window.innerWidth, t.height = 2 * window.innerHeight }) } }, this.setupElement = function (t) { var n; r.element = document.getElementById(t), null === (n = r.element) || void 0 === n || n.addEventListener("click", function (t) { var n = new o(2 * t.clientX, 2 * t.clientY); r.bursts.push(new i(n)), e.CONFIG.destroy_target && (r.element.style.visibility = "hidden") }) }, this.update = function (t) { r.delta_time = (t - r.time) / 1e3, r.time = t; for (var e = r.bursts.length - 1; e >= 0; e--)r.bursts[e].update(r.delta_time), 0 == r.bursts[e].particles.length && r.bursts.splice(e, 1); r.draw(), window.requestAnimationFrame(r.update) }, !n) throw new Error("Missing id"); e.CONFIG || (e.CONFIG = new t), this.time = (new Date).getTime(), this.delta_time = 0, this.setupCanvasContext(), this.setupElement(n), window.requestAnimationFrame(this.update) } return e.prototype.draw = function () { s.clearScreen(); for (var t = 0, e = this.bursts; t < e.length; t++) { e[t].draw() } }, e }(), i = function () { function t(t) { this.particles = []; for (var i = 0; i < e.CONFIG.particle_count; i++)this.particles.push(new n(t)) } return t.prototype.update = function (t) { for (var e = this.particles.length - 1; e >= 0; e--)this.particles[e].update(t), this.particles[e].checkBounds() && this.particles.splice(e, 1) }, t.prototype.draw = function () { for (var t = this.particles.length - 1; t >= 0; t--)this.particles[t].draw() }, t }(), n = function () { function t(t) { this.size = new o((16 * Math.random() + 4) * e.CONFIG.particle_size, (4 * Math.random() + 4) * e.CONFIG.particle_size), this.position = new o(t.x - this.size.x / 2, t.y - this.size.y / 2), this.velocity = r.generateVelocity(), this.rotation = 360 * Math.random(), this.rotation_speed = 10 * (Math.random() - .5), this.hue = 360 * Math.random(), this.opacity = 100, this.lifetime = Math.random() + .25 } return t.prototype.update = function (t) { this.velocity.y += e.CONFIG.gravity * (this.size.y / (10 * e.CONFIG.particle_size)) * t, this.velocity.x += 25 * (Math.random() - .5) * t, this.velocity.y *= .98, this.velocity.x *= .98, this.position.x += this.velocity.x, this.position.y += this.velocity.y, this.rotation += this.rotation_speed, e.CONFIG.fade && (this.opacity -= this.lifetime) }, t.prototype.checkBounds = function () { return this.position.y - 2 * this.size.x > 2 * window.innerHeight }, t.prototype.draw = function () { s.drawRectangle(this.position, this.size, this.rotation, this.hue, this.opacity) }, t }(), o = function () { return function (t, e) { this.x = t || 0, this.y = e || 0 } }(), r = function () { function t() { } return t.generateVelocity = function () { var t = Math.random() - .5, i = Math.random() - .7, n = Math.sqrt(t * t + i * i); return i /= n, new o((t /= n) * (Math.random() * e.CONFIG.explosion_power), i * (Math.random() * e.CONFIG.explosion_power)) }, t }(), s = function () { function t() { } return t.clearScreen = function () { e.CTX && e.CTX.clearRect(0, 0, 2 * window.innerWidth, 2 * window.innerHeight) }, t.drawRectangle = function (t, i, n, o, r) { e.CTX && (e.CTX.save(), e.CTX.beginPath(), e.CTX.translate(t.x + i.x / 2, t.y + i.y / 2), e.CTX.rotate(n * Math.PI / 180), e.CTX.rect(-i.x / 2, -i.y / 2, i.x, i.y), e.CTX.fillStyle = "hsla(" + o + "deg, 90%, 65%, " + r + "%)", e.CTX.fill(), e.CTX.restore()) }, t }(); return e }();
-  </script>
-
-  <script>
-    const { createApp, ref, watch } = Vue
-
-    createApp({
-      setup() {
-
-        const dark = () => {
-          document.body.setAttribute('data-bs-theme', 'dark')
-          document.body.style.backgroundImage = 'url("img/background-dark.svg")'
-          return "img/moon.svg"
-        }
-
-        const light = () => {
-          document.body.setAttribute('data-bs-theme', 'light')
-          document.body.style.backgroundImage = 'url("img/background-light.svg")'
-          return "img/sun.svg"
-        }
-
-        const changeTheme = () => {
-          if (document.body.getAttribute('data-bs-theme') === 'light') {
-            imgTheme.value = dark()
-          } else {
-            imgTheme.value = light()
-          }
-        }
-
-        const updateThemeToHour = () => {
-          const hours = new Date().getHours()
-          if (hours >= 19 || hours <= 7) {
-            imgTheme.value = dark()
-          } else {
-            imgTheme.value = light()
-          }
-        }
-
-        const imgTheme = ref(light())
-        updateThemeToHour()
-
-        const p = new URL(document.location).searchParams;
-        const params = {
-          date: p.get("date"),
-          hour: p.get("hour"),
-          msg: p.get("msg"),
-        }
-
-        const isNotEmpty = ref(true)
-        const date = ref({})
-        const msg = params.msg
-        const error = ref(null)
-        const isFinish = ref(false)
-        let intervalID;
-
-        if (Object.values(params).every(x => x === null)) {
-          isNotEmpty.value = false
-        } else {
-          const endDate = dayjs(`${params.date}T${params.hour}+02:00`)
-
-          if (endDate.isValid()) {
-
-            const updateDate = () => {
-              date.value.day = endDate.diff(dayjs(), 'd')
-              date.value.hour = endDate.diff(dayjs(), 'h')
-              date.value.second = endDate.diff(dayjs(), 's')
-              if (date.value.second <= 0) {
-                isFinish.value = true
-                clearInterval(intervalID);
-                new Confetti('confetti');
-              }
-            }
-
-            updateDate();
-            intervalID = setInterval(updateDate, 1000);
-          } else {
-            error.value = 'Date invalide'
-          }
-        }
-
-        const inputText = ref('')
-        const inputDate = ref('')
-        const inputTime = ref('')
-        const isInputValid = ref(false)
-
-        const go = () => {
-          const URL = `?msg=${inputText.value}&date=${inputDate.value}&hour=${inputTime.value}:00`
-          document.location.href = URL;
-        }
-
-
-        watch([inputDate, inputTime], ([x, y]) => {
-          isInputValid.value = [x, y].every(z => z !== '')
-        })
-
-        return {
-          changeTheme,
-          isNotEmpty,
-          date,
-          msg,
-          imgTheme,
-          error,
-          go,
-          inputText,
-          inputDate,
-          inputTime,
-          isInputValid,
-          isFinish
-        }
-      },
-      template: `
-        <a href="/timebefore.html" class="hover:outline hover:text-white text-[#fcaf3c] rounded p-2 absolute bottom-2 right-2">
-          Nouveau
-        </a>
-
-        <img :src="imgTheme" width="200" class="absolute top-0 right-0 cursor-pointer" @click="changeTheme">
-        <div v-if="isNotEmpty">
-          <h1 class="text-7xl font-bold mb-8">{{msg}}</h1>
-
-          <div class="bg-red-600 font-semibold text-4xl p-4 rounded shadow" v-if="error">Erreur: {{error}}</div>
-
-          <div class="font-semibold text-7xl p-7" v-if="isFinish">
-            <div id="confetti" class="cursor-pointer">🎉</div>
-            <div class="my-8">Le compteur est terminé</div>
-          </div>
-
-          <div v-if="!error && !isFinish">
-            <div class="text-6xl font-bold">{{ date.day }} Jours</div>
-            <div class="text-6xl font-bold">{{ date.hour }} Heures</div>
-            <div class="text-6xl font-bold">{{ date.second }} Secondes</div>
-          </div>
-        </div>
-        <div v-if="!isNotEmpty">
-
-          <div v-if="!isInputValid" class="text-white font-semibold text-5xl pb-8">Oh non, c'est vide 🥺</div>
-          <div v-if="isInputValid" class="text-white font-semibold text-5xl pb-8">Parfait ! C'est prêt 😉</div>
-
-          <div class="flex flex-col gap-4 text-start text-2xl">
-            <div>
-              <label>Message</label>
-              <input class="text-slate-800 w-full rounded p-2 my-2" type="text" v-model="inputText">
-            </div>
-            <div class="grid grid-flow-col gap-4">
-              <div>
-                <label>Date</label>
-                <input class="text-slate-800 w-full rounded p-2 my-2" type="date" v-model="inputDate">
-              </div>
-              <div>
-                <label>Heure</label>
-                <input class="text-slate-800 w-full rounded p-2 my-2" type="time" v-model="inputTime">
-              </div>
-            </div>
-          </div>
-
-          <button v-if="isInputValid" @click="go" class="w-full mt-6 text-2xl text-white hover:bg-white hover:text-slate-800 font-bold py-2 px-4 rounded">Lancer le compteur</button>
-        </div>
-        `
-    }).mount('#app')
-  </script>
+  <div id="app" class="mx-4 mt-48 text-center text-white"></div>
 </body>
 
 </html>
