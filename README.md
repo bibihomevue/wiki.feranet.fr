@@ -6,4 +6,5 @@ Welcome to my website
 
 ```bash
 pnpm install
+pnpm run dev
 ```
