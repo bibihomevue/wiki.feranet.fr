@@ -3,12 +3,15 @@
 ## Installation
 
 ::: code-group
+
 ```bash [Debian]
 sudo apt install iptables ipset fail2ban
 ```
+
 ```bash [RHEL]
 sudo dnf install iptables ipset fail2ban
 ```
+
 :::
 
 ## Iptables configuration

@@ -1,6 +1,6 @@
 # Feranet.fr
 
-Welcome to my website
+Welcome to my Wiki
 
 ## Setup
 

@@ -47,7 +47,6 @@ esac
 | `-z $string`           | Empty       |
 | `-n $string`           | Not empty   |
 
-
 ## • Numbers
 
 | code              | description      |
