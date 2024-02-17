@@ -10,7 +10,6 @@ export default defineConfig({
   head: [
     ["meta", { name: "theme-color", content: "#3c8772" }],
     ["link", { rel: "icon", type: "image/x-icon", href: "/logo.svg" }],
-    ["script", { defer: "", src: "/_vercel/insights/script.js" }],
   ],
 
   themeConfig: {
