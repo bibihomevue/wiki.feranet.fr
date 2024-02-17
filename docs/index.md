@@ -13,7 +13,7 @@ const members = [
   {
     avatar: 'https://www.github.com/Fl0wyn.png',
     name: 'Florian',
-    title: "Dev full stack & SysAdmin",
+    title: "Web Developer & SysAdmin",
     links: [{ icon: 'github', link: 'https://github.com/Fl0wyn' }]
   },
 ]
@@ -24,9 +24,9 @@ const members = [
       <template #title>
       Welcome to my Wiki
     </template>
-    <template #lead>
+<!--     <template #lead>
       Dev full stack and SysAdmin, self-taught, passionate about computers and new technologies.
-    </template>
+    </template> -->
   </VPTeamPageTitle>
   <VPTeamMembers size="medium" :members="members" />
 </VPTeamPage>

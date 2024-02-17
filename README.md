@@ -1,4 +1,4 @@
-# Feranet.fr
+# wiki.feranet.fr
 
 Welcome to my Wiki
 
