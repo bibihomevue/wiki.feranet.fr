@@ -9,7 +9,7 @@ export default defineConfig({
 
   head: [
     ["meta", { name: "theme-color", content: "#3c8772" }],
-    ["link", { rel: "icon", type: "image/x-icon", href: "/logo.svg" }],
+    ["link", { rel: "icon", type: "image/x-icon", href: "/logo.png" }],
   ],
 
   themeConfig: {
