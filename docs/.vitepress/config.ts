@@ -82,7 +82,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/Fl0wyn/feranet.fr" },
+      { icon: "github", link: "https://github.com/Fl0wyn/wiki.feranet.fr" },
     ],
 
     footer: {

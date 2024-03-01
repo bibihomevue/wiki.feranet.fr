@@ -24,9 +24,6 @@ const members = [
       <template #title>
       Welcome to my Wiki
     </template>
-<!--     <template #lead>
-      Dev full stack and SysAdmin, self-taught, passionate about computers and new technologies.
-    </template> -->
   </VPTeamPageTitle>
   <VPTeamMembers size="medium" :members="members" />
 </VPTeamPage>
