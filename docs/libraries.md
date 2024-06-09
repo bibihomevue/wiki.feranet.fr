@@ -1,7 +1,3 @@
----
-title: Memo
----
-
 # Libraries JS
 
 | Function         | Name                                                 |

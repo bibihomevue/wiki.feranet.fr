@@ -1,29 +1,40 @@
 ---
-layout: page
+layout: home
+
+hero:
+  name: Wiki Feranet
+  text: Collection of useful tips and tricks
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /linux/archives
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/Fl0wyn/wiki.feranet.fr
+
+features:
+  - icon: 🐧
+    title: Linux
+    details: commands, scripts, and tips
+  - icon: 🪟
+    title: Windows
+    details: scripts, tools, and tweaks
+  - icon: 📝
+    title: Snippets
+    details: code snippets and libraries
+  - icon: 📚
+    title: Libraries
+    details: Libraries and frameworks JS
 ---
 
-<script setup>
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPTeamMembers
-} from 'vitepress/theme'
+## Setup
 
-const members = [
-  {
-    avatar: 'https://www.github.com/Fl0wyn.png',
-    name: 'Florian',
-    title: "Web Developer & SysAdmin",
-    links: [{ icon: 'github', link: 'https://github.com/Fl0wyn' }]
-  },
-]
-</script>
+You can run this project locally by following these steps:
 
-<VPTeamPage>
-  <VPTeamPageTitle>
-      <template #title>
-      Welcome to my Wiki
-    </template>
-  </VPTeamPageTitle>
-  <VPTeamMembers size="medium" :members="members" />
-</VPTeamPage>
+```sh
+git clone https://github.com/Fl0wyn/wiki.feranet.fr.git
+cd wiki.feranet.fr
+
+npm install
+npm run dev
+```

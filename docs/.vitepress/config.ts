@@ -1,26 +1,30 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
+  lang: "en-US",
   title: "Wiki Feranet",
+  description: "Collection of useful tips and tricks",
   titleTemplate: "Wiki Feranet | :title",
 
   lastUpdated: true,
   cleanUrls: true,
 
   head: [
-    ["meta", { name: "theme-color", content: "#3c8772" }],
-    ["link", { rel: "icon", type: "image/x-icon", href: "/logo.png" }],
+    [
+      "link",
+      {
+        rel: "icon",
+        href: "https://feranet.fr/favicon.ico",
+      },
+    ],
   ],
 
   themeConfig: {
+    nav: [{ text: "Wiki", link: "/linux/archives" }],
+
     search: {
       provider: "local",
     },
-
-    nav: [
-      { text: "Wiki", link: "/" },
-      { text: "Snippets", link: "/snippets/bash" },
-    ],
 
     sidebar: {
       "/": [
@@ -62,16 +66,18 @@ export default defineConfig({
             { text: "Key activation", link: "/windows/enable-key" },
           ],
         },
-      ],
-      "/snippets/": [
         {
           text: "Snippets",
+          collapsed: false,
           items: [
             { text: "Bash", link: "/snippets/bash" },
             { text: "JS - Method", link: "/snippets/javascript-method" },
             { text: "JS - Config", link: "/snippets/javascript-config" },
             { text: "Apache2 & Nginx", link: "/snippets/apache2-nginx" },
           ],
+        },
+        {
+          items: [{ text: "Libraries", link: "/libraries" }],
         },
       ],
     },
@@ -86,8 +92,8 @@ export default defineConfig({
     ],
 
     footer: {
-      message: "Released under the Creative Commons Zero v1.0 Universal",
-      copyright: `Copyright © ${new Date().getFullYear()} — feranet.fr`,
+      message: "Released under the GPL-3.0 License.",
+      copyright: `Copyright © ${new Date().getFullYear()} — wiki.feranet.fr`,
     },
   },
 });

@@ -1,7 +1,6 @@
 {
   "name": "wiki.feranet.fr",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vitepress dev docs",
@@ -10,8 +9,7 @@
     "test": "vitepress build docs --check"
   },
   "author": "Fl0wyn",
-  "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-rc.44"
+    "vitepress": "^1.2.3"
   }
 }
