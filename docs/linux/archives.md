@@ -1,54 +1,19 @@
 # Archives
 
-## tar
+## List
 
-```bash
-# Created
-tar cvf archive.tar files/folders
-tar zcvf archive.tar.gz files/folders # gzip
-
-# Extraction
-tar xvf archive.tar
-tar zxvf archive.tar.gz # gzip
-```
-
-## zip
-
-`zip unzip`
-
-```bash
-# Created
-zip archive.zip files
-zip -r archive.zip folders
-
-# Extraction
-unzip archive.zip
-```
-
-## rar
-
-`rar unrar-free`
-
-```bash
-# Created
-rar a archive.rar files
-rar a -r archive.rar folders
-
-# Extraction
-unrar x archive.rar
-```
-
-## 7z
-
-`p7zip`
-
-```bash
-# Created
-p7zip -k files/folders
-
-# Extraction
-p7zip -d archive.rar.7z
-```
+| Format   | Created                                  | Extraction                 |
+| -------- | ---------------------------------------- | -------------------------- |
+| .tar     | `tar cvf archive.tar files/folders`      | `tar xvf archive.tar`      |
+| .tar.gz  | `tar zcvf archive.tar.gz files/folders`  | `tar zxvf archive.tar.gz`  |
+| .tar.bz2 | `tar jcvf archive.tar.bz2 files/folders` | `tar jxvf archive.tar.bz2` |
+| .tbz2    | `tar jcvf archive.tbz2 files/folders`    | `tar jxvf archive.tbz2`    |
+| .tgz     | `tar zcvf archive.tgz files/folders`     | `tar zxvf archive.tgz`     |
+| .bz2     | `bzip2 -k files`                         | `bunzip2 archive.bz2`      |
+| .gz      | `gzip -k files`                          | `gunzip archive.gz`        |
+| .rar     | `rar a archive.rar files`                | `unrar x archive.rar`      |
+| .zip     | `zip archive.zip files`                  | `unzip archive.zip`        |
+| .7z      | `7z a archive.7z files`                  | `7z x archive.7z`          |
 
 ## Function
 
@@ -57,16 +22,15 @@ p7zip -d archive.rar.7z
 ex () {
   if [ -f $1 ] ; then
     case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.bz2)   tar xjf $1   ;;
       *.tbz2)      tar xjf $1   ;;
       *.tgz)       tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.rar)       unrar x $1   ;;
       *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac

@@ -18,4 +18,4 @@ Add key
 gpg -a --export 0D6C9793 | sudo apt-key add -
 ```
 
-[🔍 Source](https://www.debian.org/doc/manuals/securing-debian-manual/deb-pack-sign.fr.html)
+[Source](https://www.debian.org/doc/manuals/securing-debian-manual/deb-pack-sign.en.html)
