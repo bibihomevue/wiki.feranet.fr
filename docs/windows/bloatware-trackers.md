@@ -13,10 +13,10 @@ Privatezilla is the simplest way to perform a quick privacy and security check o
 Script to remove bloatware from Windows 10. [download](https://github.com/Sycnex/Windows10Debloater)
 
 ```powershell
-iwr -useb https://git.io/debloat|iex
+iwr -useb https://git.io/debloat | iex
 ```
 
-# Chris Titus Tech's Windows Utility
+## Chris Titus Tech's Windows Utility
 
 This utility streamlines Windows installations, fixes configurations, updates, and optimizes systems. [download](https://github.com/ChrisTitusTech/winutil)
 
