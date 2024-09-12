@@ -15,3 +15,11 @@ Script to remove bloatware from Windows 10. [download](https://github.com/Sycnex
 ```powershell
 iwr -useb https://git.io/debloat|iex
 ```
+
+# Chris Titus Tech's Windows Utility
+
+This utility streamlines Windows installations, fixes configurations, updates, and optimizes systems. [download](https://github.com/ChrisTitusTech/winutil)
+
+```powershell
+irm "https://christitus.com/win" | iex
+```
