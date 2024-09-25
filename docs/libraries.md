@@ -12,6 +12,8 @@
 | Sortable         | [Sortable](https://sortablejs.github.io/Sortable/)   |
 | Cookie           | [js-cookie](https://github.com/js-cookie/js-cookie/) |
 | Chart            | [Chart.js](https://www.chartjs.org/)                 |
+| Drag to swap     | [Swapy](https://swapy.tahazsh.com/)                  |
+| Presentation     | [Reveal.js](https://revealjs.com/)                   |
 
 <style scoped>
 th {
