@@ -45,4 +45,7 @@ Mount the directory automatically on boot
 
 ```bash
 //SRV-WINDOWS/prod/share /home/share cifs  credentials=/etc/samba/user,noexec  0 0
+smbclient '\\SRV-WINDOWS\prod\share' -U <user>
+sudo mount -a
 ```
+
